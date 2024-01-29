@@ -374,7 +374,7 @@ In the output above, `unzip` has used 22 seconds, and `jq` has used 54 seconds.
 Fortunately, because the lambda server has so many CPUs available, each of these processes will be running on their own CPU and running in parallel.
 The amount of time for the entire command to complete is therefore only the length of time for the slowest command,
 and not the total length of time for all commands.
-In Python, it is essentially impossible to have the unzip and json decoding happen in parallel due to the [Global Interpreter Lock (GIL)](https://wiki.python.org/moin/GlobalInterpreterLock) (although there is [some recent work to fix this problem](https://www.infoworld.com/article/3704248/python-moves-to-remove-the-gil-and-boost-concurrency.html)).
+In Python, it is essentially impossible to have the unzip and json decoding happen in parallel due to the [Global Interpreter Lock (GIL)](https://wiki.python.org/moin/GlobalInterpreterLock) (although there is [some recent work to fix this peoblem](https://www.infoworld.com/article/3704248/python-moves-to-remove-the-gil-and-boost-concurrency.html)).
 In the shell, it is trivial to have these expensive tasks run in parallel.
 
 When your command completes, upload the `top10.png` file to github.
